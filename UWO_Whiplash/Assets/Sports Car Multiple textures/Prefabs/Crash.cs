@@ -49,7 +49,7 @@ public class Crash : MonoBehaviour {
 
             System.TimeSpan ts = goCrash.Elapsed;
 
-            if(ts.Minutes>0 && ts.Seconds > 48)
+            if(ts.Minutes>0 && ts.Seconds > 49)
             {
                 goCrash.Stop();
                 accel = 0.25f;
@@ -67,8 +67,9 @@ public class Crash : MonoBehaviour {
 
         if (WPIndex == 2)
         {
-            currentSpeed = 0.0f;
-            accel = 0f;
+            
+            var script = GetComponent("Crash");
+            script.gameObject.active = false;
         }
         if (currentWaypoint)
         {

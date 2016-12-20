@@ -172,6 +172,9 @@ public class Path01 : MonoBehaviour {
         currentSpeed = currentSpeed + accel * accel;
         transform.Translate(0, 0, Time.deltaTime * currentSpeed);
 
+        //Vector3 temp = new Vector3(0, 0, Time.deltaTime * currentSpeed);
+        //transform.GetComponent<Rigidbody>().MovePosition(temp);
+
         if (currentSpeed > maxSpeed)
         {
             currentSpeed = maxSpeed;
@@ -214,7 +217,10 @@ public class Path01 : MonoBehaviour {
         currentSpeed = currentSpeed - decel;
         transform.Translate(0,0, Time.deltaTime*currentSpeed);
 
-        if(currentSpeed<= minSpeed)
+        //Vector3 temp = new Vector3(0, 0, Time.deltaTime * currentSpeed);
+        //transform.GetComponent<Rigidbody>().MovePosition(temp);
+
+        if (currentSpeed<= minSpeed)
         {
             currentSpeed = minSpeed;
         }
